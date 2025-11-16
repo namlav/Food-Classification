@@ -1,0 +1,23 @@
+# Deep Learning
+tensorflow==2.15.0
+keras==2.15.0
+
+# Computer Vision
+opencv-python==4.9.0.80
+Pillow==10.2.0
+
+# Data Processing
+numpy==1.26.4
+pandas==2.2.0
+scikit-learn==1.4.0
+
+# Visualization
+matplotlib==3.8.2
+seaborn==0.13.2
+
+# Web Demo
+streamlit==1.31.0
+streamlit-drawable-canvas==0.9.3
+
+# Utils
+tqdm==4.66.1
