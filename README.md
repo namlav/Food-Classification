@@ -7,7 +7,7 @@ Hệ thống phân loại thực phẩm, hoa quả sử dụng Deep Learning v�
 Dự án này xây dựng một classifier ảnh để phân loại trái cây, rau củ và đồ ăn sử dụng:
 - **Transfer Learning**: MobileNetV2 hoặc ResNet50
 - **Preprocessing**: OpenCV với CLAHE enhancement
-- **Dataset**: Fruits-360 hoặc custom dataset
+- **Dataset**: Fruits-360
 - **Demo**: Web application với Streamlit
 
 ## 🚀 Tính năng
