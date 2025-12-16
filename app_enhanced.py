@@ -65,8 +65,12 @@ def detect_food_items(image, yolo_model, confidence_threshold=0.5):
     # Get detections
     detections = []
     for result in results:
-        for box in result.boxes.xyxy.cpu().numpy():
-            x1, y1, x2, y2, conf, cls = box
+        # Get coordinates, confidence, and class separately
+        boxes = result.boxes.xyxy.cpu().numpy()  # Shape: (N, 4) - [x1, y1, x2, y2]
+        confs = result.boxes.conf.cpu().numpy()  # Shape: (N,) - confidence scores
+        clses = result.boxes.cls.cpu().numpy()  # Shape: (N,) - class ids
+        for box, conf, cls in zip(boxes, confs, clses):
+            x1, y1, x2, y2 = box
             detections.append(
                 {
                     "bbox": [int(x1), int(y1), int(x2), int(y2)],
@@ -169,7 +173,7 @@ def main():
     Main Streamlit app
     """
     # Title
-    st.title("🍎 Enhanced Food Classification System")
+    st.title("🍎 Food Classification System")
     st.markdown("---")
 
     # Load YOLO model
