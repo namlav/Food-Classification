@@ -74,7 +74,7 @@ unzip fruits.zip -d data/
 
 **Basic training với MobileNet:**
 ```bash
-python train.py --model_type mobilenet --epochs 50
+python train.py --model_type mobilenet --epochs 30
 ```
 
 **Training với fine-tuning:**
@@ -88,7 +88,7 @@ python train.py \
     --train_dir data/train \
     --val_dir data/validation \
     --model_type mobilenet \
-    --epochs 50 \
+    --epochs 30 \
     --batch_size 32 \
     --fine_tune \
     --fine_tune_epochs 20 \
