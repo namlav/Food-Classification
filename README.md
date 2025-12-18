@@ -12,7 +12,7 @@ Dự án này xây dựng một classifier ảnh để phân loại trái cây, 
 
 ## 🚀 Tính năng
 
-- ✅ Training với MobileNet/ResNet
+- ✅ Training với MobileNet
 - ✅ OpenCV preprocessing (CLAHE, denoising, augmentation)
 - ✅ Validation và evaluation
 - ✅ Web demo với Streamlit
@@ -77,11 +77,6 @@ unzip fruits.zip -d data/
 python train.py --model_type mobilenet --epochs 50
 ```
 
-**Training với ResNet50:**
-```bash
-python train.py --model_type resnet50 --epochs 50 --batch_size 32
-```
-
 **Training với fine-tuning:**
 ```bash
 python train.py --model_type mobilenet --epochs 30 --fine_tune --fine_tune_epochs 20
@@ -109,7 +104,7 @@ python evaluate.py --model models/mobilenet_20241110_120000.h5 --test_dir data/t
 ### 3. Web Demo
 
 ```bash
-streamlit run app.py
+streamlit run app_enhanced.py
 ```
 
 Sau đó mở trình duyệt tại: http://localhost:8501
@@ -148,9 +143,9 @@ Chỉnh sửa `config.py` để thay đổi các tham số:
 # Model configuration
 IMAGE_SIZE = (224, 224)
 BATCH_SIZE = 32
-EPOCHS = 50
+EPOCHS = 30
 LEARNING_RATE = 0.001
-MODEL_TYPE = 'mobilenet'  # or 'resnet50'
+MODEL_TYPE = 'mobilenet'
 
 # OpenCV preprocessing
 CLAHE_CLIP_LIMIT = 2.0
@@ -228,7 +223,7 @@ MIT License - xem file LICENSE để biết thêm chi tiết.
 
 ## 👨‍💻 Tác giả
 
-Food Classification Project
+Nam Lav
 
 ## 🙏 Acknowledgments
 
